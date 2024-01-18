@@ -3,7 +3,7 @@ import 'package:mozz_chat/features/chat/models/message.dart';
 import 'package:mozz_chat/features/welcome/models/user_model.dart';
 
 class ChatModel {
-  final String id;
+  String id;
   final List<UserModel> users;
   final List<MessageModel> messages;
 
@@ -27,7 +27,6 @@ class ChatModel {
 
   factory ChatModel.fromSnapshot(DocumentSnapshot snapshot) {
     final data = snapshot.data() as Map<String, dynamic>;
-    print('chat');
     return ChatModel(
       id: snapshot.id,
       users: (data['users'] as List<dynamic>).map((userJson) => UserModel.fromJson(userJson)).toList(),

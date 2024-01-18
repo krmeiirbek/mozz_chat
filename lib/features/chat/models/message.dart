@@ -15,6 +15,14 @@ class MessageModel {
     };
   }
 
+  Map<String, dynamic> toFirebase() {
+    return {
+      'message': message,
+      'author': author,
+      'sendTime': Timestamp.fromDate(sendTime),
+    };
+  }
+
   factory MessageModel.fromJson(Map<String, dynamic> json) {
     return MessageModel(
       message: json['message'],
@@ -24,9 +32,7 @@ class MessageModel {
   }
 
   factory MessageModel.fromSnapshot(DocumentSnapshot snapshot) {
-    print('message1');
     final data = snapshot.data() as Map<String, dynamic>;
-    print('message2');
     return MessageModel(
       message: data['message'],
       author: data['author'],

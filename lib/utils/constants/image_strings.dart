@@ -30,7 +30,7 @@ class MozzImages {
   static const String attach_document = 'assets/icons/Attach_document.svg';
   static const String attach_Person = 'assets/icons/Attach_Person.svg';
   static const String attachment = 'assets/icons/Attachment.svg';
-  static const String Audio = 'assets/icons/Audio.svg';
+  static const String audio = 'assets/icons/Audio.svg';
   static const String bed = 'assets/icons/Bed.svg';
   static const String bicycle = 'assets/icons/Bicycle.svg';
   static const String big_Arrow_down = 'assets/icons/Big_Arrow_down.svg';

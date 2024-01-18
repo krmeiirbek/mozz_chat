@@ -16,4 +16,20 @@ class THelperFunctions {
       return '${dateTime.day}.${dateTime.month.toString().padLeft(2, '0')}.${dateTime.year}';
     }
   }
+
+  static String getFormattedDay(DateTime dateTime) {
+    DateTime now = DateTime.now();
+
+    if (dateTime.day == now.day) {
+      return 'Сегодня';
+    } else if (dateTime.day == now.day - 1) {
+      return 'Вчера';
+    } else {
+      return '${dateTime.day}.${dateTime.month.toString().padLeft(2, '0')}.${dateTime.year}';
+    }
+  }
+
+  static String getFormattedTime(DateTime dateTime) {
+    return '${dateTime.hour}:${dateTime.minute.toString().padLeft(2, '0')}';
+  }
 }

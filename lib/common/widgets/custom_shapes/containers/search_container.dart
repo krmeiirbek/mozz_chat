@@ -26,6 +26,7 @@ class TSearchContainer extends StatelessWidget {
               color: const Color(0xff9DB7CB),
               width: 24,
               height: 24,
+              fit: BoxFit.scaleDown,
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.0),
