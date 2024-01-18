@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mozz_chat/common/widgets/appbar/appbar_search.dart';
+import 'package:mozz_chat/features/chat/controllers/home_controller.dart';
 import 'package:mozz_chat/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
     return Scaffold(
       appBar: const AppBarWithSearch(title: 'Чаты'),
       body: Container(
