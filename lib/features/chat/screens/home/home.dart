@@ -14,13 +14,18 @@ class HomeScreen extends StatelessWidget {
       appBar: const AppBarWithSearch(title: 'Чаты'),
       body: Container(
         padding: const EdgeInsets.all(TSizes.md),
-        child: ListView.separated(
-          itemBuilder: (_, index) => Container(
-            height: 40,
-            color: Colors.yellow,
-          ),
-          separatorBuilder: (_, __) => Divider(),
-          itemCount: 5,
+        child: FutureBuilder<String>(
+          future: null,
+          builder: (context, snapshot) {
+            return ListView.separated(
+              itemBuilder: (_, index) => Container(
+                height: 40,
+                color: Colors.yellow,
+              ),
+              separatorBuilder: (_, __) => Divider(),
+              itemCount: 5,
+            );
+          }
         ),
       ),
     );

@@ -12,7 +12,20 @@
           "package_name": "com.example.mozz_chat"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "546215818612-l145rt8qjl2j0r0sa2rtqi32cejv50h0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mozz_chat",
+            "certificate_hash": "6be5613a44b5f1a6c985f8b02acbb6b634f683a6"
+          }
+        },
+        {
+          "client_id": "546215818612-rceba3vvk66e54889cohh5el3hm5fm31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDuBaXqYDLdo4ws4aTeyJHS7lVHxi1gQGs"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546215818612-rceba3vvk66e54889cohh5el3hm5fm31.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "546215818612-7mtgvcma91lk156cl41s1bk433e7avtf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mozzChat"
+              }
+            }
+          ]
         }
       }
     }

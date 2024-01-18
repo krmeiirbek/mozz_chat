@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:mozz_chat/data/repositories/login/login_repository.dart';
 import 'package:mozz_chat/routes/app_routes.dart';
 
+import 'bindings/general_bindings.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: GeneralBindings(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
