@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "546215818612",
+    "project_id": "mozz-chat",
+    "storage_bucket": "mozz-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546215818612:android:3ed687b75e7dcc79f0e821",
+        "android_client_info": {
+          "package_name": "com.example.mozz_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuBaXqYDLdo4ws4aTeyJHS7lVHxi1gQGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
