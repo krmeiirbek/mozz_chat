@@ -44,16 +44,30 @@ class ChatRepository extends GetxController {
 
   Future<ChatModel> createChat(UserModel currentUserModel, UserModel userModel) async {
     try {
+      print('before snapshot');
       final snapshot = await _db.collection('Chats').where('users', arrayContains: currentUserModel.toJson()).get();
-      print(snapshot.docs.length);
-
+      print('after snapshot');
+      if (snapshot.docs.isEmpty) {
+        print('else method');
+        var newChat = ChatModel(id: '', users: [currentUserModel, userModel], messages: []);
+        final docNewChat = _db.collection('Chats').doc();
+        newChat.id = docNewChat.id;
+        await docNewChat.set(newChat.toJson());
+        return newChat;
+      }
       final existingChats = snapshot.docs.map((doc) => ChatModel.fromSnapshot(doc));
-
-      final ffff = existingChats.where((element) => element.users.where((element2) => element2.id == userModel.id).first.name == userModel.name);
-
+      if (existingChats.isEmpty) {
+        print('empty');
+      }
+      print(existingChats.length);
+      final ffff = existingChats.where((element) =>
+          element.users.where((element2) => element2.id == userModel.id).isNotEmpty && element.users.where((element2) => element2.id == userModel.id).first.name == userModel.name);
+      print(ffff.length);
       if (ffff.isNotEmpty) {
+        print('ffff.isNotEmpty = true');
         return ffff.first;
       } else {
+        print('else method');
         var newChat = ChatModel(id: '', users: [currentUserModel, userModel], messages: []);
         final docNewChat = _db.collection('Chats').doc();
         newChat.id = docNewChat.id;

@@ -25,7 +25,9 @@ class UserRepository extends GetxController {
 
   Future<UserModel> fetchUserDetails() async {
     try {
-      final documentSnapshot = await _db.collection("Users").doc(LoginRepository.instance.authUser?.uid).get();
+      final uid = LoginRepository.instance.authUser?.uid;
+      print(uid);
+      final documentSnapshot = await _db.collection("Users").doc(uid).get();
 
       if (documentSnapshot.exists) {
         return UserModel.fromSnapshot(documentSnapshot);

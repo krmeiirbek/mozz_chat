@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:mozz_chat/data/repositories/chat/chat_repository.dart';
+import 'package:mozz_chat/data/repositories/login/login_repository.dart';
 import 'package:mozz_chat/data/repositories/user/user_repository.dart';
 import 'package:mozz_chat/features/chat/models/chat.dart';
 import 'package:mozz_chat/features/chat/screens/chat/chat.dart';
@@ -47,8 +48,12 @@ class HomeController extends GetxController {
         "Жүктелуде...",
         MozzImages.loading,
       );
-      final currentUserModel = await UserRepository.instance.fetchUserDetails();
+      print('do currentuser');
+      final curU = LoginRepository.instance.authUser;
+      final currentUserModel = UserModel(name: curU?.displayName ?? '', id: curU?.uid ?? '', image: curU?.photoURL ?? '');
+      print('after user');
       final newChat = await chatRepo.createChat(currentUserModel, userModel);
+      print('after new chat');
       TFullScreenLoader.stopLoading();
       Get.off(() => ChatScreen(chatModel: newChat, userModel: userModel));
     } catch (e) {
